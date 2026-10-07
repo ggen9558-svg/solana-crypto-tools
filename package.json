@@ -1,0 +1,36 @@
+{
+  "name": "solana-crypto-tools",
+  "version": "1.0.0",
+  "description": "Solana wallet library and CLI",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "cli": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://localhost:26831/ggen9558-svg/solana-crypto-tools"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@solana/spl-token": "^0.4.15",
+    "@solana/web3.js": "^1.99.0",
+    "bip39": "^3.1.0",
+    "bs58": "^6.0.0",
+    "dotenv": "^18.0.6",
+    "ed25519-hd-key": "^2.0.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "bin": {
+    "solana-wallet": "dist/cli.js"
+  }
+}
