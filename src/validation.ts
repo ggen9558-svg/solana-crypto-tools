@@ -35,7 +35,10 @@ export function toBaseUnits(value: string | number, decimals: number): bigint {
 export function fromBaseUnits(value: bigint, decimals: number): string {
   const s = value.toString().padStart(decimals + 1, "0");
   const whole = s.slice(0, s.length - decimals);
-  const frac = s.slice(s.length - decimals).replace(/0+$/, "");
+  let frac = s.slice(s.length - decimals);
+  let end = frac.length;
+  while (end > 0 && frac[end - 1] === "0") end--;
+  frac = frac.slice(0, end);
   return frac ? `${whole}.${frac}` : whole;
 }
 
