@@ -1,19 +1,21 @@
 {
   "name": "solana-crypto-tools",
   "version": "1.0.0",
-  "description": "Solana cryptocurrency tools including wallet, exchange, smart contracts, and security audits",
-  "main": "index.js",
+  "description": "Solana wallet library and CLI",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "cli": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
   },
   "repository": {
     "type": "git",
     "url": "http://localhost:26831/ggen9558-svg/solana-crypto-tools"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "license": "MIT",
+  "type": "module",
   "dependencies": {
     "@solana/spl-token": "^0.4.15",
     "@solana/web3.js": "^1.99.0",
@@ -27,5 +29,8 @@
     "@types/node": "^26.6.4",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3"
+  },
+  "bin": {
+    "solana-wallet": "dist/cli.js"
   }
 }
